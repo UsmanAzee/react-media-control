@@ -59,87 +59,82 @@ const SimpleDialog = props => {
 
   const clearResult = () => {
     setResult("QR code not found");
+  };
 
-    const handleClose = () => {
-      onClose(selectedValue);
-    };
+  const handleClose = () => {
+    onClose(selectedValue);
+  };
 
-    const handleListItemClick = value => {
-      onClose(value);
-    };
+  const handleListItemClick = value => {
+    onClose(value);
+  };
 
-    return (
-      <Dialog
-        onClose={handleClose}
-        aria-labelledby="simple-dialog-title"
-        open={open}
-      >
-        <DialogTitle id="simple-dialog-title">QR Scanner</DialogTitle>
-        <MuiDialogContent>
-          <div className={classes.root}>
+  return (
+    <Dialog
+      onClose={handleClose}
+      aria-labelledby="simple-dialog-title"
+      open={open}
+      maxWidth={"md"}
+      fullWidth={true}
+    >
+      <DialogTitle id="simple-dialog-title">QR Scanner</DialogTitle>
+      <MuiDialogContent>
+        <div className={classes.root}>
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+            spacing={2}
+          >
+            <Grid item xs={6}>
+              <QrReader
+                delay={1}
+                onError={handleError}
+                onScan={handleScan}
+                showViewFinder={true}
+                legacyMode={false}
+                className={classes.cameraDisplay}
+              />
+            </Grid>
+
             <Grid
+              item
               container
               direction="row"
-              justify="center"
-              alignItems="center"
               spacing={2}
+              alignItems="center"
+              justify="center"
+              // direction="column"
+              xs={10}
             >
-              <Grid item xs={6}>
-                <QrReader
-                  delay={1}
-                  onError={handleError}
-                  onScan={handleScan}
-                  showViewFinder={true}
-                  legacyMode={false}
-                  className={classes.cameraDisplay}
-                />
+              <Grid item xs={12}>
+                <Card variant="outlined" className={classes.resultcard}>
+                  <CardContent>
+                    <Typography variant="body1" gutterBottom>
+                      {result}
+                    </Typography>
+                  </CardContent>
+                </Card>
               </Grid>
 
-              <Grid
-                item
-                container
-                direction="row"
-                spacing={2}
-                alignItems="center"
-                justify="center"
-                // direction="column"
-                paddingLeft="100"
-                xs={10}
-              >
-                <Grid item xs={12}>
-                  <Card variant="outlined" className={classes.resultcard}>
-                    <CardContent>
-                      <Typography variant="body1" gutterBottom>
-                        {result}
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-
-                <Grid item xs={12}>
-                  <Button
-                    variant="contained"
-                    //color="black"
-                    color="primary"
-                    onClick={clearResult}
-                    className={classes.clearbutton}
-                  >
-                    Clear
-                  </Button>
-                </Grid>
+              <Grid item xs={12}>
+                <Button
+                  variant="contained"
+                  //color="black"
+                  color="primary"
+                  onClick={clearResult}
+                  className={classes.clearbutton}
+                >
+                  Clear
+                </Button>
               </Grid>
             </Grid>
-          </div>
-        </MuiDialogContent>
-      </Dialog>
-    );
-  };
-
-  SimpleDialog.propTypes = {
-    onClose: PropTypes.func.isRequired,
-    open: PropTypes.bool.isRequired,
-    selectedValue: PropTypes.string.isRequired
-  };
+          </Grid>
+        </div>
+      </MuiDialogContent>
+    </Dialog>
+  );
 };
 
 const SimpleDialogDemo = () => {
@@ -150,7 +145,7 @@ const SimpleDialogDemo = () => {
     setOpen(true);
   };
 
-  const handleClose = value => {
+  const handleClose = () => {
     setOpen(false);
     // setSelectedValue(value);
   };
