@@ -344,7 +344,7 @@ const ScanReceipt = () => {
                     </Button>
                   </Box>
                   <Box mx={theme.spacing(0.1)}>
-                    <Button variant="outlined" onClick={stopStream}>
+                    <Button variant="contained" onClick={stopStream}>
                       Stop QR Scanner
                     </Button>
                   </Box>
