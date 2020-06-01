@@ -245,7 +245,7 @@ const ScanReceipt = () => {
   return (
     <div className={classes.root}>
       <Card elevation={3}>
-        <Box>Test Branch</Box>
+        <Box>Changes from Test Branch</Box>
         <Box p={theme.spacing(0.2)}>
           <Grid
             container
