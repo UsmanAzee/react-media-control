@@ -245,7 +245,7 @@ const ScanReceipt = () => {
   return (
     <div className={classes.root}>
       <Card elevation={3}>
-        <Box>New Changes in Test Branch</Box>
+        <Box>Changes from Test Branch</Box>
         <Box p={theme.spacing(0.2)}>
           <Grid
             container
@@ -340,7 +340,7 @@ const ScanReceipt = () => {
               <Grid item xs={12}>
                 <Box display="flex">
                   <Box mx={theme.spacing(0.1)}>
-                    <Button variant="contained" color='secondary' onClick={startStream}>
+                    <Button variant="outlined" color='secondary' onClick={startStream}>
                       Start QR Scanner
                     </Button>
                   </Box>
@@ -350,8 +350,7 @@ const ScanReceipt = () => {
                     </Button>
                   </Box>
                   <Box mx={theme.spacing(0.1)}>
-                    <Button variant="contained" color='primary' onClick={printSample}>
-                      Print Sample
+                    <Button variant="outlined" color='primary' onClick={printSample}>                      Print Sample
                     </Button>
                   </Box>
                 </Box>
