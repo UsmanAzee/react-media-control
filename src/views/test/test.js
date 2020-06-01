@@ -339,16 +339,20 @@ const ScanReceipt = () => {
               <Grid item xs={12}>
                 <Box display="flex">
                   <Box mx={theme.spacing(0.1)}>
-                    <Button variant="outlined" onClick={startStream}>
+                    <Button variant="contained" color='secondary' onClick={startStream}>
                       Start QR Scanner
                     </Button>
                   </Box>
-                  <Button variant="outlined" onClick={stopStream}>
-                    Stop QR Scanner
-                  </Button>
-                  <Button variant="outlined" onClick={printSample}>
-                    Print Sample
-                  </Button>
+                  <Box mx={theme.spacing(0.1)}>
+                    <Button variant="outlined" onClick={stopStream}>
+                      Stop QR Scanner
+                    </Button>
+                  </Box>
+                  <Box mx={theme.spacing(0.1)}>
+                    <Button variant="contained" color='primary' onClick={printSample}>
+                      Print Sample
+                    </Button>
+                  </Box>
                 </Box>
               </Grid>
 
