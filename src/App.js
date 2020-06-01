@@ -5,6 +5,7 @@ import { HashRouter as Router } from "react-router-dom";
 import Routes from "./routing/Routes";
 import theme from './theme';
 import { MyAppContext } from './context';
+import { SnackbarProvider } from 'notistack';
 
 
 
@@ -13,11 +14,13 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <SnackbarProvider maxSnack={3}>
       <Router>
         <MyAppContext.Provider value={{value, setValue}}>
           <Routes />
         </MyAppContext.Provider>
       </Router>
+      </SnackbarProvider>
     </ThemeProvider>
   );
 }

@@ -5,6 +5,7 @@ import { Main as MainLayout } from "../layout";
 
 import {
   Test as TestView,
+  PrinterDemo as PrinterDemoView,
   NotFound as NotFoundView
 } from "../views";
 
@@ -18,6 +19,13 @@ const Routes = () => {
           exact
           layout={MainLayout}
           path="/test"
+        />
+
+        <PrivateRoute
+          component={PrinterDemoView}
+          exact
+          layout={MainLayout}
+          path="/printer-demo"
         />
         
         <PrivateRoute

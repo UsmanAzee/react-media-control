@@ -11,7 +11,7 @@ import ImageIcon from '@material-ui/icons/Image';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import SettingsIcon from '@material-ui/icons/Settings';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
-import  {ConfirmationNumber,Schedule,Mms } from '@material-ui/icons'
+import  {ConfirmationNumber,Schedule,Mms, AspectRatio } from '@material-ui/icons'
 import ForumOutlinedIcon from '@material-ui/icons/ForumOutlined';
 import RecentActorsIcon from '@material-ui/icons/RecentActors';
 import { List, LinearProgress } from '@material-ui/core';
@@ -58,6 +58,11 @@ const Sidebar = props => {
       title: 'Test',
       href: '/test',
       icon: (<DashboardIcon />)
+    },
+    {
+      title: 'Printer Demo',
+      href: '/printer-demo',
+      icon: (<AspectRatio />)
     }
   ];
 
